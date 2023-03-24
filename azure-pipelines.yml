@@ -22,9 +22,9 @@ steps:
     restoreSolution: Application/SampleWebApplication.sln
 
 - task: UseDotNet@2
-  displayName: 'Install .NET Core sdk 3.1.x'
+  displayName: 'Install .NET Core sdk 6.0.x'
   inputs:
-    version: 3.1.x
+    version: 6.0.x
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore'
@@ -34,12 +34,12 @@ steps:
   enabled: false
 
 - task: MSBuild@1
-  displayName: 'Build solution Application/SampleWebApplication.sln'
+  displayName: 'Build solution Application/Buoi03Core.sln'
   inputs:
-    solution: Application/SampleWebApplication.sln
-    msbuildArchitecture: x64
+    solution: 'Application/Buoi03Core.sln'
+    msbuildArchitecture: 'x64'
     platform: 'any cpu'
-    configuration: Release
+    configuration: 'Release'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet test'
@@ -49,10 +49,10 @@ steps:
   enabled: false
 
 - task: ArchiveFiles@2
-  displayName: 'Archive Application/SampleWebApplication'
+  displayName: 'Archive Application/Buoi03Core'
   inputs:
-    rootFolderOrFile: Application/SampleWebApplication
-    archiveFile: '$(Build.ArtifactStagingDirectory)/Application.zip'
+    rootFolderOrFile: Application/Buoi03Core
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Buoi03Core.zip'
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
