@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<Buoi03Core.Models.Employee>
+@{
+    TempData["title"] = "List Employee";
+}
+<h1>List of Employee</h1>
+@*@Html.ActionLink("Create new Employee","CreateView","Employee",new {@class="btn btn-primary"})*@
+<a asp-action="CreateView" class="btn btn-primary">Create New</a>
+<form>
+    <label>Search Name: </label>
+    <input type="text" name="name" placeholder="Enter emp Name to search" />
+    <input type="submit" value="Search" />
+</form>
+<form>
+    <label>Search Experiences: </label>
+    <input type="number" name="year" placeholder="Enter year to search" />
+    <input type="submit" value="Search" />
+</form>
+<table class="table table-hover">
+    <tr>
+        <th>@Html.DisplayNameFor(Model=>Model.Id)</th>
+        <th>@Html.DisplayNameFor(Model=>Model.EmployeeName)</th>
+        <th>@Html.DisplayNameFor(Model=>Model.Skill)</th>
+        <th>@Html.DisplayNameFor(Model=>Model.Phone)</th>
+        <th>@Html.DisplayNameFor(Model=>Model.Experiences)</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>    
+            <td>@item.Id</td>
+            <td>@item.EmployeeName</td>
+            <td>@item.Skill</td>
+            <td>@item.Phone</td>
+            <td>@item.Experiences</td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", "Employee", new { Id = item.Id },
+                    new { @class = "btn btn-danger", onclick="return confirm('Are you sure delete?!')"})
+                <a asp-action="Update" asp-controller="Employee" asp-route-id=@item.Id class="btn btn-warning">Update</a>
+            </td>
+        </tr>
+    }
+</table>

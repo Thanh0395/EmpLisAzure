@@ -1,0 +1,32 @@
+﻿@model Buoi03Core.Models.Employee
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>New Employee</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Employee Name</label>
+        @Html.EditorFor(e => e.EmployeeName)
+        @Html.ValidationMessageFor(e => e.EmployeeName, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        <label>Phone</label>
+        @Html.EditorFor(e => e.Phone)
+        @Html.ValidationMessageFor(e => e.Phone, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        <label>Skill</label>
+        @Html.EditorFor(e => e.Skill)
+        @Html.ValidationMessageFor(e => e.Skill, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        <label>Exp</label>
+        @Html.EditorFor(e => e.Experiences)
+        @Html.ValidationMessageFor(e => e.Experiences, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+}

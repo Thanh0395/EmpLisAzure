@@ -1,0 +1,33 @@
+﻿@model Buoi03Core.Models.Employee
+@{
+    ViewBag.Title = "Update";
+}
+<div>
+    <h2>Update Employee</h2>
+</div>
+<form asp-action ="Update">
+    <input type="hidden" asp-for="Id"/>
+    <div class="mb-3">
+        <label>Employee Name</label>
+        <input type="text" asp-for="EmployeeName" />
+        <span asp-validation-for="EmployeeName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label>Phone</label>
+        <input type="text" asp-for="Phone" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label>Skill</label>
+        <input type="text" asp-for="Skill" />
+        <span asp-validation-for="Skill" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label>Experiences</label>
+        <input type="number" asp-for="Experiences" />
+        <span asp-validation-for="Experiences" class="text-danger"></span>
+    </div>
+    <div>
+        <input type="submit" value="Update" class="btn btn-primary" />
+    </div>
+</form>
