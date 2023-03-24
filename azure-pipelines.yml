@@ -7,28 +7,59 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
-
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+  name: sbinterntraining-agentpool
+  demands: msbuild
 
 steps:
 - task: NuGetToolInstaller@1
+  displayName: 'Use NuGet 5.8.0'
+  inputs:
+    versionSpec: 5.8.0
 
 - task: NuGetCommand@2
+  displayName: 'NuGet restore'
   inputs:
-    restoreSolution: '$(solution)'
+    restoreSolution: Application/SampleWebApplication.sln
 
-- task: VSBuild@1
+- task: UseDotNet@2
+  displayName: 'Install .NET Core sdk 3.1.x'
   inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    version: 3.1.x
 
-- task: VSTest@2
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: restore
+    projects: '**/*.csproj'
+  enabled: false
+
+- task: MSBuild@1
+  displayName: 'Build solution Application/SampleWebApplication.sln'
+  inputs:
+    solution: Application/SampleWebApplication.sln
+    msbuildArchitecture: x64
+    platform: 'any cpu'
+    configuration: Release
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet test'
+  inputs:
+    command: test
+    projects: '**/*.UnitTests.dll'
+  enabled: false
+
+- task: ArchiveFiles@2
+  displayName: 'Archive Application/SampleWebApplication'
+  inputs:
+    rootFolderOrFile: Application/SampleWebApplication
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Application.zip'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  inputs:
+    SourceFolder: ArmTemplates
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+
