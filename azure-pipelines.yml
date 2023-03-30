@@ -1,0 +1,65 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  name: sbinterntraining-agentpool
+  demands: msbuild
+
+steps:
+- task: NuGetToolInstaller@1
+  displayName: 'Use NuGet 5.8.0'
+  inputs:
+    versionSpec: 5.8.0
+
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+  inputs:
+    restoreSolution: Application/SampleWebApplication.sln
+
+- task: UseDotNet@2
+  displayName: 'Install .NET Core sdk 6.0.x'
+  inputs:
+    version: 6.0.x
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
+  inputs:
+    command: restore
+    projects: '**/*.csproj'
+  enabled: false
+
+- task: MSBuild@1
+  displayName: 'Build solution Application/Buoi03Core.sln'
+  inputs:
+    solution: 'Application/Buoi03Core.sln'
+    msbuildArchitecture: 'x64'
+    platform: 'any cpu'
+    configuration: 'Release'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet test'
+  inputs:
+    command: test
+    projects: '**/*.UnitTests.dll'
+  enabled: false
+
+- task: ArchiveFiles@2
+  displayName: 'Archive Application/Buoi03Core'
+  inputs:
+    rootFolderOrFile: Application/Buoi03Core
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Buoi03Core.zip'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  inputs:
+    SourceFolder: ArmTemplates
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+
