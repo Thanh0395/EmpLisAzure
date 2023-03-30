@@ -4,7 +4,7 @@
 
 namespace Buoi03Core.Migrations
 {
-    public partial class DBinit : Migration
+    public partial class DBInit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,8 @@ namespace Buoi03Core.Migrations
                     EmployeeName = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Skill = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Experiences = table.Column<int>(type: "int", nullable: false)
+                    Experiences = table.Column<int>(type: "int", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

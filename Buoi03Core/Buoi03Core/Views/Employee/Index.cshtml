@@ -18,7 +18,7 @@
 </form>
 <table class="table table-hover">
     <tr>
-        <th>@Html.DisplayNameFor(Model=>Model.Id)</th>
+        <th>@Html.DisplayNameFor(Model=>Model.Image)</th>
         <th>@Html.DisplayNameFor(Model=>Model.EmployeeName)</th>
         <th>@Html.DisplayNameFor(Model=>Model.Skill)</th>
         <th>@Html.DisplayNameFor(Model=>Model.Phone)</th>
@@ -27,8 +27,8 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>    
-            <td>@item.Id</td>
+        <tr>
+            <td><img src="@item.Image" width="100" class="img-thumbnail" /></td>
             <td>@item.EmployeeName</td>
             <td>@item.Skill</td>
             <td>@item.Phone</td>

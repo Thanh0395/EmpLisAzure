@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Buoi03Core.Migrations
 {
     [DbContext(typeof(DatabaseConText))]
-    [Migration("20230315122633_DBinnit")]
-    partial class DBinnit
+    [Migration("20230330033848_DBInit")]
+    partial class DBInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,6 +38,9 @@ namespace Buoi03Core.Migrations
 
                     b.Property<int>("Experiences")
                         .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
                         .IsRequired()

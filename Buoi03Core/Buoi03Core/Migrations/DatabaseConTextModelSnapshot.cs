@@ -37,6 +37,9 @@ namespace Buoi03Core.Migrations
                     b.Property<int>("Experiences")
                         .HasColumnType("int");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

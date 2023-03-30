@@ -49,6 +49,7 @@ namespace Buoi03Core.Repository
                 emp.Phone = UpdEmployee.Phone;
                 emp.Skill = UpdEmployee.Skill;
                 emp.Experiences = UpdEmployee.Experiences;
+                emp.Image= UpdEmployee.Image;
                 _dbContext.SaveChanges();
             }
         }

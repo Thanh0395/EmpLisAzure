@@ -34,14 +34,23 @@ namespace Buoi03Core.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateView(Employee AddEmp)
+        public IActionResult CreateView(Employee AddEmp, IFormFile fileUploadxx)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _empController.AddEmp(AddEmp);
-                    return RedirectToAction("Index");
+                    if (fileUploadxx.Length > 0)
+                    {
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(fileUploadxx.FileName);
+                        string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//images", fileName);
+                        var stream = new FileStream(uploadPath, FileMode.Create);
+                        fileUploadxx.CopyToAsync(stream);
+                        AddEmp.Image = "images/" + fileName;
+
+                    } 
+                        _empController.AddEmp(AddEmp);
+                        return RedirectToAction("Index");
                 }
             }
             catch (Exception e)
@@ -59,12 +68,28 @@ namespace Buoi03Core.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(Employee UpdateEmp)
+        public IActionResult Update(Employee UpdateEmp, IFormFile? fileUploadxx)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+                    var emp_inDb = _empController.GetEmp(UpdateEmp.Id);
+                    if (fileUploadxx == null)
+                    {
+                        UpdateEmp.Image = emp_inDb.Image;
+                        _empController.UpdateEmp(UpdateEmp);
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(fileUploadxx.FileName);
+                        string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//images", fileName);
+                        var stream = new FileStream(uploadPath, FileMode.Create);
+                        fileUploadxx.CopyToAsync(stream);
+                        UpdateEmp.Image = "images/" + fileName;
+
+                    }
                     _empController.UpdateEmp(UpdateEmp);
                     return RedirectToAction("Index");
                 }

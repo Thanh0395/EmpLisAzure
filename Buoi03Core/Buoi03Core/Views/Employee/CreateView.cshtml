@@ -4,29 +4,33 @@
 }
 
 <h2>New Employee</h2>
-@using (Html.BeginForm())
-{
-    <div>
-        <label>Employee Name</label>
-        @Html.EditorFor(e => e.EmployeeName)
-        @Html.ValidationMessageFor(e => e.EmployeeName, "", new { @class = "text-danger" })
+<form asp-action="CreateView" enctype="multipart/form-data" method="post">
+    <div class="form-control">
+        <label class="form-label">Employee Name</label>
+        <input asp-for="EmployeeName" type="text" />
+        <span asp-validation-for="EmployeeName" class="text-danger"></span>
     </div>
-    <div>
-        <label>Phone</label>
-        @Html.EditorFor(e => e.Phone)
-        @Html.ValidationMessageFor(e => e.Phone, "", new { @class = "text-danger" })
+    <div class="form-control">
+        <label class="form-label">Phone</label>
+        <input asp-for="Phone" type="text" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
     </div>
-    <div>
-        <label>Skill</label>
-        @Html.EditorFor(e => e.Skill)
-        @Html.ValidationMessageFor(e => e.Skill, "", new { @class = "text-danger" })
+    <div class="form-control">
+        <label class="form-label">Skill</label>
+        <input asp-for="Skill" type="text" />
+        <span asp-validation-for="Skill" class="text-danger"></span>
     </div>
-    <div>
-        <label>Exp</label>
-        @Html.EditorFor(e => e.Experiences)
-        @Html.ValidationMessageFor(e => e.Experiences, "", new { @class = "text-danger" })
+    <div class="form-control">
+        <label class="form-label">Experiences</label>
+        <input asp-for="Experiences" type="number" />
+        <span asp-validation-for="Experiences" class="text-danger"></span>
     </div>
-    <div>
+    <div class="form-control">
+        <label>Image</label>
+        <input name="fileUploadxx" type="file" required/>
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-control">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
-}
+</form>

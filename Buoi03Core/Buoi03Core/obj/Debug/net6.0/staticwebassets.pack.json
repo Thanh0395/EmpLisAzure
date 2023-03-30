@@ -189,6 +189,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\2c1a216f-ffbe-4f9c-a7e0-5931d9663482.jpg",
+      "PackagePath": "staticwebassets\\images\\2c1a216f-ffbe-4f9c-a7e0-5931d9663482.jpg"
+    },
+    {
+      "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\6095bc42-b0f5-47bf-9c56-b63911751a99.jpg",
+      "PackagePath": "staticwebassets\\images\\6095bc42-b0f5-47bf-9c56-b63911751a99.jpg"
+    },
+    {
+      "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\6aba4b33-48d7-422e-a141-91440ff3e70f.png",
+      "PackagePath": "staticwebassets\\images\\6aba4b33-48d7-422e-a141-91440ff3e70f.png"
+    },
+    {
+      "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\6b06550c-05ce-4c92-95ea-fadc9f3471ca.jpg",
+      "PackagePath": "staticwebassets\\images\\6b06550c-05ce-4c92-95ea-fadc9f3471ca.jpg"
+    },
+    {
+      "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\bb968475-1dbf-49ad-b3bc-bf06564c9dd3.jpg",
+      "PackagePath": "staticwebassets\\images\\bb968475-1dbf-49ad-b3bc-bf06564c9dd3.jpg"
+    },
+    {
+      "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\fb123f2b-6cdf-4307-8e76-0423bac691b3.jpg",
+      "PackagePath": "staticwebassets\\images\\fb123f2b-6cdf-4307-8e76-0423bac691b3.jpg"
+    },
+    {
       "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
