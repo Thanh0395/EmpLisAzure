@@ -196,3 +196,14 @@ F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\obj\Debug\net6.0\refint\Buoi03
 F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\obj\Debug\net6.0\Buoi03Core.pdb
 F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\obj\Debug\net6.0\Buoi03Core.genruntimeconfig.cache
 F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\obj\Debug\net6.0\ref\Buoi03Core.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\Azure.Core.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\Azure.Storage.Common.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\System.IO.Hashing.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\System.Memory.Data.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\Azure.Identity.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\Azure.Security.KeyVault.Secrets.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+F:\SpiderBox\Training\Cloud\Buoi03Core\Buoi03Core\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

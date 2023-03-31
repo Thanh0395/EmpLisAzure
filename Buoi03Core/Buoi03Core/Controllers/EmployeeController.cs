@@ -8,13 +8,17 @@ namespace Buoi03Core.Controllers
     public class EmployeeController : Controller
     {
         private IEmployeeRepository _empController;
-        public EmployeeController(IEmployeeRepository employeeRepository) { 
+        private readonly FileService _fileService;
+        public EmployeeController(IEmployeeRepository employeeRepository, FileService fileService) { 
             _empController = employeeRepository;
+            _fileService = fileService;
         }
         //private IEmployeeRepository _employeeController;
         public IActionResult Index(string name)
         {
             var result = _empController.GetAllEmp();
+            var imageFiles = _fileService.ListAsync();
+            ViewData["imageFiles"] = imageFiles;
             if (string.IsNullOrEmpty(name))
             {
                 return View(result);
@@ -30,6 +34,7 @@ namespace Buoi03Core.Controllers
 
         [HttpGet]
         public IActionResult CreateView() {
+
             return View();
         }
 
@@ -40,17 +45,22 @@ namespace Buoi03Core.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    if (fileUploadxx.Length > 0)
-                    {
-                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(fileUploadxx.FileName);
-                        string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//images", fileName);
-                        var stream = new FileStream(uploadPath, FileMode.Create);
-                        fileUploadxx.CopyToAsync(stream);
-                        AddEmp.Image = "images/" + fileName;
+                    if (fileUploadxx.Length > 0){
+                        _fileService.UploadAsync(fileUploadxx);
 
-                    } 
-                        _empController.AddEmp(AddEmp);
-                        return RedirectToAction("Index");
+                        string fileName = fileUploadxx.FileName;
+                        AddEmp.Image = fileName;
+                    }
+                    //if (fileUploadxx.Length > 0)
+                    //{
+                    //    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(fileUploadxx.FileName);
+                    //    string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//images", fileName);
+                    //    var stream = new FileStream(uploadPath, FileMode.Create);
+                    //    fileUploadxx.CopyToAsync(stream);
+                    //    AddEmp.Image = "images/" + fileName;
+                    //} 
+                    _empController.AddEmp(AddEmp);
+                    return RedirectToAction("Index");
                 }
             }
             catch (Exception e)

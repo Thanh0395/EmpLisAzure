@@ -1,3 +1,5 @@
+﻿using Azure.Identity;
+using Buoi03Core;
 using Buoi03Core.Models;
 using Buoi03Core.Repository;
 using Buoi03Core.Respository;
@@ -7,10 +9,21 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<DatabaseConText>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectDb")));
+
+//Connect to azure KeyVault
+var KeyVaultUrl = new Uri(builder.Configuration.GetSection("KeyVaultURL").Value!);
+var azureCredential = new DefaultAzureCredential();
+builder.Configuration.AddAzureKeyVault(KeyVaultUrl, azureCredential);
+var cs = builder.Configuration.GetSection("azuresql").Value;
+Console.WriteLine(cs);
+//Connect bang connectionString thông thường
+builder.Services.AddDbContext<DatabaseConText>(options =>
+    options.UseSqlServer(cs));
+
+
 builder.Services.AddScoped<IEmployeeRepository, EmpRepoIml>();//Tiem su phu thuoc
 
+builder.Services.AddSingleton<FileService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

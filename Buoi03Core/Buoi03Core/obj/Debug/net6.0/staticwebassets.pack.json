@@ -189,8 +189,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\114c1132-9992-41ac-a2cb-dc346b8cfb62.jpg",
+      "PackagePath": "staticwebassets\\images\\114c1132-9992-41ac-a2cb-dc346b8cfb62.jpg"
+    },
+    {
       "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\2c1a216f-ffbe-4f9c-a7e0-5931d9663482.jpg",
       "PackagePath": "staticwebassets\\images\\2c1a216f-ffbe-4f9c-a7e0-5931d9663482.jpg"
+    },
+    {
+      "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\3ede2a77-689e-4bb0-a045-60429f24fd6f.png",
+      "PackagePath": "staticwebassets\\images\\3ede2a77-689e-4bb0-a045-60429f24fd6f.png"
     },
     {
       "Id": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\6095bc42-b0f5-47bf-9c56-b63911751a99.jpg",

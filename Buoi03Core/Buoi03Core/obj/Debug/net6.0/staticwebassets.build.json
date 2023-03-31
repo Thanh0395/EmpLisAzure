@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rbVcljW+IaPIN4zK/e8SqpTdDQtJrcpJS7iS+Or55xc=",
+  "Hash": "RlUm3T6lPMJCR8CGOjKWqknOMvteNTimaelgOB7MLYs=",
   "Source": "Buoi03Core",
   "BasePath": "_content/Buoi03Core",
   "Mode": "Default",
@@ -833,6 +833,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\114c1132-9992-41ac-a2cb-dc346b8cfb62.jpg",
+      "SourceId": "Buoi03Core",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\",
+      "BasePath": "_content/Buoi03Core",
+      "RelativePath": "images/114c1132-9992-41ac-a2cb-dc346b8cfb62.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\114c1132-9992-41ac-a2cb-dc346b8cfb62.jpg"
+    },
+    {
       "Identity": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\2c1a216f-ffbe-4f9c-a7e0-5931d9663482.jpg",
       "SourceId": "Buoi03Core",
       "SourceType": "Discovered",
@@ -848,6 +865,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\2c1a216f-ffbe-4f9c-a7e0-5931d9663482.jpg"
+    },
+    {
+      "Identity": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\3ede2a77-689e-4bb0-a045-60429f24fd6f.png",
+      "SourceId": "Buoi03Core",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\",
+      "BasePath": "_content/Buoi03Core",
+      "RelativePath": "images/3ede2a77-689e-4bb0-a045-60429f24fd6f.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3ede2a77-689e-4bb0-a045-60429f24fd6f.png"
     },
     {
       "Identity": "F:\\SpiderBox\\Training\\Cloud\\Buoi03Core\\Buoi03Core\\wwwroot\\images\\6095bc42-b0f5-47bf-9c56-b63911751a99.jpg",
